@@ -5,12 +5,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #eeeeee;
     
-}
-
-h1{
-    text-align: center;
 }
 
 .collage {
@@ -49,21 +45,26 @@ nav {
 
 nav ul {
     list-style: none;
-    margin: 0;
+    margin: 25px;
     padding: 0;
     display: flex;
     justify-content: space-around;
-}
-
-nav ul li {
-    margin-right: 20px;
+    border-top: 1px solid rgb(188, 175, 106);
+    border-bottom: 3px solid rgb(188, 175, 106);
 }
 
 nav a {
     text-decoration: none;
     color: #fff;
+    
+}
+nav ul li:hover {
+    background-color: rgb(188, 175, 106);
 }
 
+nav ul a:hover {
+    color: #453a3a;
+}
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -74,7 +75,8 @@ nav a {
 }
 
 h1 {
-    color: #333;
+    text-align: center;
+    color: rgb(188, 175, 106);
 }
 
 table {

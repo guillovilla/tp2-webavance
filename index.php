@@ -1,13 +1,16 @@
 <?php
+session_start();
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 
-define('PATH_DIR', 'http://localhost/tp2/');
+define('PATH_DIR', 'http://localhost/tp2-webavance-image/');
 require_once('controller/Controller.php');
 require_once('library/RequirePage.php');
 require_once __DIR__.'/vendor/autoload.php';
 require_once('library/Twig.php');
+require_once('library/CheckSession.php');
+require_once('model/Log.php');
 
 $url = isset($_GET["url"]) ? explode ('/', ltrim($_GET["url"], '/')) : '/';
 
@@ -16,6 +19,21 @@ $url = isset($_GET["url"]) ? explode ('/', ltrim($_GET["url"], '/')) : '/';
 // echo $url[0]; // controller
 // echo $url[1]; // method
 // echo $url[2]; // value
+
+
+
+    $log = new Log;
+
+    // Obtener información de la sesión
+    $logArray = [
+    'ip' => $_SERVER['REMOTE_ADDR'],
+    'nom' => isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest',
+    'page' => $_SERVER['REQUEST_URI']
+    ];
+
+    // Insertar datos en la base de datos
+    $log->insert($logArray);
+
 
 
 if($url == '/'){
@@ -51,10 +69,7 @@ if($url == '/'){
         exit;
     }
 
-
-
 }
-
 
 // https://packagist.org/packages/rakit/validation
 ?>

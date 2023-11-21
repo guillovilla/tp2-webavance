@@ -6,6 +6,10 @@ class RequirePage {
         return require_once('model/'.$model.'.php');
     }
 
+    static public function library($library){
+        return require_once('library/'.$library.'.php');
+    }
+
     static public function header($title){
         return '
         <!DOCTYPE html>

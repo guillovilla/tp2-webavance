@@ -4,6 +4,8 @@ RequirePage::model('CRUD');
 RequirePage::model('EmpruntLivre');
 RequirePage::model('Emprunt');
 RequirePage::model('Usager');
+RequirePage::model('Livre');
+RequirePage::library('Validation');
 
 
 class ControllerEmprunt extends controller {

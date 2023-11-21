@@ -2,6 +2,7 @@
 <body>
     <div class="container">
         <form action="{{path}}usager/update" method="post">
+        <span class="text-danger">{{ errors | raw }}</span>
             <input type="hidden" name="id" value="{{ usager.id}}">
             <label>Nom
                 <input type="text" name="nom" value="{{ usager.nom }}">
